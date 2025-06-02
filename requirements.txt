@@ -10,11 +10,11 @@ frozendict==2.4.6
 idna==3.10
 kiwisolver==1.4.8
 lxml==5.4.0
-matplotlib==3.10.3
+matplotlib>=3.7.0
 multitasking==0.0.11
-numpy==2.2.6
+numpy>=1.24.0
 packaging==25.0
-pandas==2.2.3
+pandas>=2.0.0
 peewee==3.18.1
 pillow==11.2.1
 platformdirs==4.3.8
@@ -30,4 +30,4 @@ typing_extensions==4.14.0
 tzdata==2025.2
 urllib3==2.4.0
 websockets==15.0.1
-yfinance==0.2.61
+yfinance>=0.2.36
