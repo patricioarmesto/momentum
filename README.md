@@ -25,6 +25,11 @@ A Python-based momentum trading screener that identifies high-momentum stocks us
   - Efficient data processing and storage
   - CSV export of results
 
+- **Additional Tools**:
+  - Web scraper for collecting stock data
+  - BYMA codes integration for Argentine market
+  - Support for CEDEARs (Argentine ADRs)
+
 ## Requirements
 
 - Python 3.7+
@@ -33,6 +38,8 @@ A Python-based momentum trading screener that identifies high-momentum stocks us
   - pandas
   - numpy
   - matplotlib
+  - requests
+  - beautifulsoup4
 
 ## Installation
 
@@ -50,7 +57,8 @@ pip install -r requirements.txt
 ## Usage
 
 1. Prepare your ticker list:
-   - Create a text file (e.g., `cedears.txt`) with one ticker symbol per line
+   - Use the provided `cedears.txt` for Argentine CEDEARs
+   - Or create your own text file with one ticker symbol per line
    - Ensure tickers are in the correct format (e.g., 'AAPL' for Apple)
 
 2. Run the screener:
@@ -58,7 +66,12 @@ pip install -r requirements.txt
 python screener.py
 ```
 
-3. View the results:
+3. For scraping BYMA codes:
+```bash
+python scraper.py
+```
+
+4. View the results:
    - Top momentum stocks will be displayed in the console
    - A performance comparison chart will be shown
    - Results will be saved to CSV files with timestamps
@@ -80,7 +93,7 @@ screener = MomentumScreener(
 
 ## Output Files
 
-The screener generates two types of output files:
+The screener generates several types of output files:
 
 1. `momentum_portfolio_[timestamp].csv`:
    - Contains the selected stocks and their momentum scores
@@ -89,6 +102,10 @@ The screener generates two types of output files:
 2. `momentum_comparison_[timestamp].csv`:
    - Compares current results with previous month
    - Shows added, removed, and maintained stocks
+
+3. `byma_codes.csv`:
+   - Contains the latest BYMA codes and their corresponding tickers
+   - Updated through the scraper
 
 ## Contributing
 
