@@ -31,3 +31,4 @@ tzdata==2025.2
 urllib3==2.4.0
 websockets==15.0.1
 yfinance>=0.2.36
+PyPDF2==3.0.1
