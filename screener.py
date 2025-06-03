@@ -43,10 +43,15 @@ class MomentumScreener:
         """Load ticker symbols from a file."""
         try:
             with open(filename, 'r') as f:
-                tickers = [line.strip() for line in f if line.strip()]
+                # Read lines and filter out empty lines and whitespace
+                tickers = [line.strip() for line in f.readlines() if line.strip()]
+            # Replace dots with hyphens for yfinance compatibility
             return [ticker.replace('.', '-') for ticker in tickers]
         except FileNotFoundError:
             print(f"Error: File {filename} not found")
+            return []
+        except Exception as e:
+            print(f"Error reading file {filename}: {str(e)}")
             return []
 
     def download_data(self, tickers: List[str], start_date: datetime, end_date: datetime) -> pd.DataFrame:
