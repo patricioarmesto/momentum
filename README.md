@@ -51,7 +51,7 @@ cd momentum
 
 2. Install required packages:
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ## Usage
